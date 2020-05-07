@@ -1,0 +1,14 @@
+-----------------------------------------------------------
+ovs-vsctl
+ovs-vsctl set-controller br-test tcp:127.0.0.1:6633   连接控制器
+ovs-vsctl del-controller br0                          删除控制器
+ovs-vsctl list controller                             查看控制器
+ovs-vsctl show  显示桥和桥上的端口状态
+-----------------------------------------------------------
+ovs-ofctl 
+ovs-ofctl dump-flows br-test    查看桥上流表
+ovs-ofctl add-flow br0 in_port=1,actions=output:2    给br0添加流表，如端口为port1的转发到2端口
+ovs-ofctl del-flows br0         删除桥上所有流表
+-----------------------------------------------------------
+ovs-appctl 
+ovs-appctl dpif/show
