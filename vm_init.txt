@@ -1,0 +1,137 @@
+    1  ip a
+    4  cd /etc/yum.repos.d
+    5  mv CentOS-Base.repo CentOS-Base.repo.bk
+    6  yum install -y wget
+    7  wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+    8  ls
+    9  mv CentOS-Base.repo.bk CentOS-Base.repo
+   10  wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+   11  yum install -y wget
+   12  mv CentOS-Base.repo CentOS-Base.repo.bk
+   13  wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+   14  mv CentOS7-Base-163.repo CentOS-Base.repo
+   15  yum clean all && yum clean metadata && yum clean dbcache && yum makecache && yum update
+   35  git clone https://github.com/openvswitch/ovs.git
+   36  git config --global http.postBuffer 1048576000
+  109  git add helloworld
+  112  git clone https://github.com/openvswitch/ovs.git
+  124  tar -czvf ovs.tar.gz   ovs/
+  127  rz ovs.tar.gz 
+  128  yum install lrzsz
+  135  git config --global user.name   fsz
+  136  git config -l
+  137  git config --global user.email fsz304203330@foxmail.com
+  138  git config -l
+  139  mkdir gittest
+  140  cd gittest/
+  141  git config --list
+  142  git init
+  147  cd ..
+  148  touch a
+  149  touch b
+  150  touch c
+  151  git add a b c
+  152  git status
+  154  git rm --cached a b c
+  155  ls
+  156  git status
+  157  ls -a 
+  158  git add a b c
+  159  git status
+  160  git diff
+  161  vi a
+  162  git diff
+  164  git diff --staged
+  165  git log
+  166  cat .git/HEAD
+  167  git add a
+  168  git diff
+  169  git commite -m "add a b c"
+  170  git commit -m "add a b c"
+  171  git log
+  172  rm a b c
+  173  ls
+  174  git checkout master
+  178  mkdir helloworld
+  179  git init
+  180  git clonehttps://github.com/fsz304203330/helloworld.git
+  181  git clone https://github.com/fsz304203330/helloworld.git
+  196  vi README.md 
+  197  touch helloworld 
+  198  vi helloworld 
+  201  git add helloworld 
+  202  git diff
+  203  history |grep -m
+  204  git commit -m add helloworld
+  205  git log
+  206  ssh –v
+  207  yum install -y ssh
+  208  ssh -V
+  209  ssh-keygen
+  210  cd ~/.ssh
+  211  ls
+  212  history |grep git 
+  213  ssh-keygen -t rsa -C fsz304203330@foxmail.com
+  215  cat id_rsa.pub
+  218  git log
+  221  git status
+  226  git diff
+  228  git diff --staged
+  232  git diff
+  234  git add helloworld 
+  235  git diff
+  236  git commit -m "helloword tijiao"
+  237  git log
+  238  git push origin master
+  239  git --version
+  244  rpm -qa 
+  245  rpm -qa |grep git
+  246  rpm -ql |grep git-1.8.3.1-22.el7_8.x86_64
+  247  rpm -ql  git-1.8.3.1-22.el7_8.x86_64
+  248  rpm -ql  git-1.8.3.1-22.el7_8.x86_64 |grep /etc
+  249  rpm -ql  git-1.8.3.1-22.el7_8.x86_64 |grep confi
+  252  git branch -a
+  253  git checkout origin/branch-2.11
+  254  ./boot.sh
+  255  yum install autoconf automake libtool
+  256  ./boot.sh
+  257  ./configure -with-linux=/lib/modules/$(uname -r)/build
+  258  yum install python-six.noarch -y
+  259  ./configure -with-linux=/lib/modules/$(uname -r)/build
+  260  yum -y install make gcc openssl-devel autoconf automake rpm-build redhat-rpm-config
+  261  yum -y install python-devel openssl-devel kernel-devel kernel-debug-devel libtool wget
+  262  ./configure -with-linux=/lib/modules/$(uname -r)/build
+  264  make
+  265  make install
+  266  make modules_install
+  267  yum install -y install linux-headers-$(uname -r)
+  269  yum install -y install aptitude && aptitude install dh-autoreconf
+  270  yum install -y  aptitude && aptitude install dh-autoreconf
+  271  yum install -y  dh-autoreconf
+  272  cd /lib/modules/$(uname -r)/extra
+  275  /usr/local/share/openvswitch/scripts/ovs-ctl start
+  279  cd ovs
+  281  cd lib
+  283  cd /lib/modules/3.10.0-1127.el7.x86_64/extra
+  285  modprobe 
+  286  modprobe openvswitch.ko 
+  287  modprobe gre
+  288  modprobe libcrc32c
+  289  modprobe openvswitch
+  290  modprobe vport-geneve
+  291  modprobe vport-gre
+  292  modprobe vport-lisp
+  293  modprobe vport-stt
+  294  modprobe vport-vxlan
+  295  lsmod |grep vp
+  300  ovs-appctl vlog
+  301  ovs-appctl vlog/list 
+  302  ovs-ofctl dump-flows
+  303  ovs-ofctl dump-flows ovs-switch
+  304  ovs-vsctl add-br  br0
+  308  ovs-vsctl list-br
+  309  ovs-vsctl list
+  311  ovs-ofctl show br0 
+  313  tailf /usr/local/var/log/openvswitch/ovsdb-server.log
+  314  tailf /usr/local/var/log/openvswitch/ovs-vswitchd.log
+   
