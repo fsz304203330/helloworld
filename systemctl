@@ -1,0 +1,53 @@
+1.参考：https://www.cnblogs.com/1lin24/p/11648607.html
+##########################################################################################################
+# Centos 7.* 使用 Systemd 进行系统初始化，因此，Centos 7.* 中我们可以使用 systemctl 管理系统中的服务。
+# systemctl 管理的服务均包含了一个以 .service 结尾的文件，存放于 /lib/systemd/。
+# 在 Centos 7.* 中，使用 yum install 命令安装的软件都会在 /linb/systemd/ 下自动创建对应的 .service 文件。
+##########################################################################################################
+2.命令格式
+systemctl cmd service_name.service
+其中：
+cmd 指命令名称
+service_name 指的是服务名称
+.service 也可以省略
+3.常用命令
+查看服务状态
+systemctl status service_name
+启动服务
+systemctl start service_name
+关闭服务
+systemctl stop service_name
+设置开机启动
+systemctl enable service_name
+关闭开机启动
+systemctl disable service_name
+查看服务是否设置开机启动
+systemctl is-enabled service_name
+重启服务
+systemctl restart service_name
+查看版本
+systemctl --version
+
+
+列出所有service类型的unit
+systemctl 列出所有的系统服务
+systemctl list-unit-files 列出所有启动文件###优先使用
+
+
+4.举例说明
+例如在CentOS 7 上安装http
+
+[root@CentOS7 ~]# yum -y install httpd
+启动服务（等同于service httpd start）
+systemctl start httpd.service
+停止服务（等同于service httpd stop）
+systemctl stop httpd.service
+重启服务（等同于service httpd restart）
+systemctl restart httpd.service
+查看服务是否运行（等同于service httpd status）
+systemctl status httpd.service
+开机自启动服务（等同于chkconfig httpd on）
+systemctl enable httpd.service
+开机时禁用服务（等同于chkconfig httpd on）
+systemctl disable httpd.service
+查看服务是否开机启动 （等同于chkconfig --list）
